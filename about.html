@@ -1,28 +1,59 @@
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="aboutUsTitle">About Us - CaPa's Writing house</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="aboutUsTitle">About Us - CaPa Writing House</title>
+  <meta name="description" data-i18n="metaDescription" content="Premium SOP/Essay and Resume consulting. Clear story, strong structure, measurable outcomes." />
+
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292642514548982"
      crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-3292642514548982">
+
+  <!-- Optional: Inter font (safe to remove if you prefer system font only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href='/style.css' rel='stylesheet'>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <a href="/index.html#hero" data-i18n="navHome">Home</a>
-      <a href="/index.html#services" data-i18n="navServices">Services</a>
-      <a href="/index.html#contact" data-i18n="navContact">Contact</a>
-      <select id="language-switcher">
-        <option value="en">English</option>
-        <option value="ko">한국어</option>
-        <option value="zh">中文</option>
-      </select>
-      <button id="theme-toggle" data-i18n="toggleTheme">Toggle Theme</button>
-    </nav>
-  </header>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <span data-i18n="brandName">CaPa Writing House</span>
+            <div style="font-size:12px; color:var(--muted); font-weight:700; margin-top:2px;" data-i18n="brandTagline">SOP • Essays • Resume</div>
+          </div>
+        </div>
+
+        <div class="nav-links" aria-label="Primary">
+          <a href="/index.html#services" data-i18n="navServices">Services</a>
+          <a href="/index.html#process" data-i18n="navProcess">Process</a>
+          <a href="/index.html#reviews" data-i18n="navReviews">Reviews</a>
+          <a href="/index.html#contact" data-i18n="navContact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <select id="language-switcher">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+          </select>
+          <span class="pill" id="themePill" data-i18n="themeLight">Light</span>
+          <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle theme" data-i18n="toggleThemeButton">
+            Toggle theme
+          </button>
+          <a class="btn btn-primary" href="/index.html#contact" data-i18n="freeConsultBtn">Free 10-min consult</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section>
@@ -34,12 +65,14 @@
   </main>
 
   <footer>
-    <p data-i18n="footerCopyright">&copy; 2026 CaPa's Writing house. All rights reserved.</p>
-    <nav class="footer-nav">
-      <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
-      <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
-      <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
-    </nav>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div data-i18n="footerCopyright">&copy; <span id="year"></span> CaPa Writing House</div>
+      <div style="display:flex; gap:14px;">
+        <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
+        <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
+        <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
+      </div>
+    </div>
   </footer>
 
   <script defer type="text/javascript" src="/main.js"></script>

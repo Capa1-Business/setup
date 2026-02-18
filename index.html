@@ -1,95 +1,257 @@
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="pageTitle">CaPa's Writing house</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="pageTitle">CaPa Writing House | SOP & Resume Consulting</title>
+  <meta name="description" data-i18n="metaDescription" content="Premium SOP/Essay and Resume consulting. Clear story, strong structure, measurable outcomes." />
+
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292642514548982"
      crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-3292642514548982">
+
+  <!-- Optional: Inter font (safe to remove if you prefer system font only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href='/style.css' rel='stylesheet'>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <a href="#hero" data-i18n="navHome">Home</a>
-      <a href="#services" data-i18n="navServices">Services</a>
-      <a href="#contact" data-i18n="navContact">Contact</a>
-      <select id="language-switcher">
-        <option value="en">English</option>
-        <option value="ko">한국어</option>
-        <option value="zh">中文</option>
-      </select>
-      <button id="theme-toggle" data-i18n="toggleTheme">Toggle Theme</button>
-    </nav>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <span data-i18n="brandName">CaPa Writing House</span>
+            <div style="font-size:12px; color:var(--muted); font-weight:700; margin-top:2px;" data-i18n="brandTagline">SOP • Essays • Resume</div>
+          </div>
+        </div>
+
+        <div class="nav-links" aria-label="Primary">
+          <a href="#services" data-i18n="navServices">Services</a>
+          <a href="#process" data-i18n="navProcess">Process</a>
+          <a href="#reviews" data-i18n="navReviews">Reviews</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <select id="language-switcher">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+          </select>
+          <span class="pill" id="themePill" data-i18n="themeLight">Light</span>
+          <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle theme" data-i18n="toggleThemeButton">
+            Toggle theme
+          </button>
+          <a class="btn btn-primary" href="#contact" data-i18n="freeConsultBtn">Free 10-min consult</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="tag" data-i18n="heroTagline">Premium writing, measurable outcomes</div>
+          <h1 data-i18n="heroTitle">Turn your story into a clear, winning application.</h1>
+          <p class="lead" data-i18n="heroLead1">
+            We craft strong SOPs, essays, and resumes with structure, narrative clarity, and ATS-friendly positioning.
+          </p>
+          <p class="lead" data-i18n="heroLead2">
+            Built for college transfer, Master’s/PhD admissions, and professional recruiting.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact" data-i18n="startFreeConsultBtn">Start with a free consult</a>
+            <a class="btn" href="#services" data-i18n="seeServicesBtn">See services</a>
+            <a class="btn btn-ghost" href="#reviews" data-i18n="viewReviewsBtn">View reviews</a>
+          </div>
+
+          <div class="metrics" aria-label="Key metrics">
+            <div class="metric"><b><span data-i18n="metric1Value">24–48h</span></b><span data-i18n="metric1Label">Typical first draft</span></div>
+            <div class="metric"><b><span data-i18n="metric2Value">2–3</span></b><span data-i18n="metric2Label">Iterative review rounds</span></div>
+            <div class="metric"><b><span data-i18n="metric3Value">Clarity</span></b><span data-i18n="metric3Label">Story + structure focus</span></div>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="side-card">
+            <h3 data-i18n="bestForTitle">Best for</h3>
+            <ul class="list">
+              <li data-i18n="bestFor1">College transfer / scholarship essays</li>
+              <li data-i18n="bestFor2">Master’s / PhD Statements of Purpose</li>
+              <li data-i18n="bestFor3">US tech recruiting resumes & LinkedIn</li>
+              <li data-i18n="bestFor4">Career switch narratives and impact bullets</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h3 data-i18n="whatYoullGetTitle">What you’ll get</h3>
+            <ul class="list">
+              <li data-i18n="whatYoullGet1">Storyline + positioning map (why you / why now)</li>
+              <li data-i18n="whatYoullGet2">Structure & flow fixes (reader-friendly)</li>
+              <li data-i18n="whatYoullGet3">Line edit for tone, precision, and grammar</li>
+              <li data-i18n="whatYoullGet4">Recruiting-ready resume bullets (metrics)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section id="hero">
-      <h1 data-i18n="heroTitle">Welcome to CaPa's Writing house</h1>
-      <p data-i18n="heroP1">Your expert partner for crafting compelling Statements of Purpose, college/transfer/master/PhD essays, and professional Resumes.</p>
-      <p data-i18n="heroP2">Let us help you articulate your unique story and achieve your academic and career goals.</p>
-    </section>
-
-    <section id="services">
-      <h2 data-i18n="servicesTitle">Our Services</h2>
-      <div class="service-item">
-        <h3 data-i18n="serviceSoPTitle">SoP & Essays</h3>
-        <p data-i18n="serviceSoPDesc">Tailored writing for university admissions, including Statements of Purpose, Personal Statements, and various application essays. We highlight your achievements and aspirations effectively.</p>
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="servicesTitle">Services</h2>
+          <p data-i18n="servicesDescription">Simple packages, professional quality, fast turnaround.</p>
+        </div>
       </div>
-      <div class="service-item">
-        <h3 data-i18n="serviceResumeTitle">Resume Building</h3>
-        <p data-i18n="serviceResumeDesc">Professionally designed resumes and CVs that stand out to recruiters. We focus on showcasing your skills, experience, and potential.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="tag" data-i18n="tagAdmissions">Admissions</div>
+          <h3 data-i18n="sopEssaysTitle">SOP & Essays</h3>
+          <p data-i18n="sopEssaysDesc">Statement of Purpose, Personal Statement, transfer essays, scholarship essays. We sharpen narrative, structure, and fit.</p>
+        </div>
+
+        <div class="card">
+          <div class="tag" data-i18n="tagRecruiting">Recruiting</div>
+          <h3 data-i18n="resumeCVTitle">Resume & CV</h3>
+          <p data-i18n="resumeCVDesc">ATS-friendly layout, impact bullets, and role-aligned keywords. Built for US tech, consulting, and corporate roles.</p>
+        </div>
+
+        <div class="card">
+          <div class="tag" data-i18n="tagFastWin">Fast win</div>
+          <h3 data-i18n="quickReviewTitle">Quick Review</h3>
+          <p data-i18n="quickReviewDesc">For near-deadlines. High-leverage edits: clarity, grammar, tone, and top-level structure—within 24 hours when possible.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="why-choose-us">
-      <h2 data-i18n="whyChooseTitle">Why Choose CaPa's Writing house?</h2>
-      <ul>
-        <li data-i18n="whyChoose1">Experienced writers specializing in academic and professional documents.</li>
-        <li data-i18n="whyChoose2">Personalized approach to capture your unique voice and story.</li>
-        <li data-i18n="whyChoose3">Proven track record of helping clients achieve their goals.</li>
-        <li data-i18n="whyChoose4">Timely delivery and competitive pricing.</li>
-      </ul>
-    </section>
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="howItWorksTitle">How it works</h2>
+          <p data-i18n="howItWorksDescription">Lightweight process—clear checkpoints, no confusion.</p>
+        </div>
+      </div>
 
-    <section id="how-it-works">
-      <h2 data-i18n="howItWorksTitle">How It Works</h2>
-      <ol>
-        <li data-i18n="howItWorks1">Submit your requirements and relevant documents.</li>
-        <li data-i18n="howItWorks2">Collaborate with your dedicated writer.</li>
-        <li data-i18n="howItWorks3">Receive a professionally crafted draft for review.</li>
-        <li data-i18n="howItWorks4">Finalize your document with revisions.</li>
-      </ol>
-    </section>
+      <div class="steps">
+        <div class="step">
+          <b><span class="num">1</span> <span data-i18n="step1Title">Intake</span></b>
+          <p data-i18n="step1Desc">Share your draft + target program/job + constraints. We identify the core storyline and gaps.</p>
+        </div>
+        <div class="step">
+          <b><span class="num">2</span> <span data-i18n="step2Title">Strategy</span></b>
+          <p data-i18n="step2Desc">Positioning map: strengths, differentiators, and how to prove them with evidence/metrics.</p>
+        </div>
+        <div class="step">
+          <b><span class="num">3</span> <span data-i18n="step3Title">Draft & Edit</span></b>
+          <p data-i18n="step3Desc">Rewrite for structure + clarity. Then line-edit for tone, precision, and flow.</p>
+        </div>
+        <div class="step">
+          <b><span class="num">4</span> <span data-i18n="step4Title">Finalize</span></b>
+          <p data-i18n="step4Desc">Review rounds, final polish, and submission-ready formatting (SOP/Resume/LinkedIn).</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2 data-i18n="contactTitle">Get in Touch</h2>
-      <form action="https://formspree.io/f/mdaldlrw" method="POST">
-        <label data-i18n="formNameLabel">
-          Your Name:
-          <input type="text" name="name" required>
-        </label>
-        <label data-i18n="formEmailLabel">
-          Your Email:
-          <input type="email" name="email" required>
-        </label>
-        <label data-i18n="formMessageLabel">
-          Your Message:
-          <textarea name="message" required></textarea>
-        </label>
-        <button type="submit" data-i18n="formSendButton">Send</button>
-      </form>
-    </section>
-  </main>
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="reviewsTitle">Reviews</h2>
+          <p data-i18n="reviewsDescription">Replace these with real testimonials when ready.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="tag" data-i18n="reviewTag1">SOP</div>
+          <h3 data-i18n="reviewHeadline1">“My story finally made sense.”</h3>
+          <p class="quote" data-i18n="reviewQuote1">The structure was night-and-day. The final SOP felt confident and clear without losing my voice.</p>
+          <div class="person"><div data-i18n="reviewer1">Applicant <span>• MS program</span></div><div>★★★★★</div></div>
+        </div>
+        <div class="card">
+          <div class="tag" data-i18n="reviewTag2">Resume</div>
+          <h3 data-i18n="reviewHeadline2">“Interviews came back.”</h3>
+          <p class="quote" data-i18n="reviewQuote2">Bullets became measurable and role-aligned. I started getting recruiter replies within two weeks.</p>
+          <div class="person"><div data-i18n="reviewer2">Candidate <span>• US tech</span></div><div>★★★★★</div></div>
+        </div>
+        <div class="card">
+          <div class="tag" data-i18n="reviewTag3">Fast review</div>
+          <h3 data-i18n="reviewHeadline3">“Saved my deadline.”</h3>
+          <p class="quote" data-i18n="reviewQuote3">Quick, high-quality edits and clear guidance on what to cut. Submission was stress-free.</p>
+          <div class="person"><div data-i18n="reviewer3">Student <span>• transfer</span></div><div>★★★★★</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h3 data-i18n="ctaTitle">Ready to start?</h3>
+          <p data-i18n="ctaDescription">Send your draft + target school/job. We’ll reply with next steps and timing.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <!-- Original mailto link -->
+          <!-- <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE?subject=CaPa%20Consult%20Request&body=Hi%20CaPa,%0A%0AWhat%20I%20need%20help%20with:%20(SOP%2FResume%2FEssay)%0ATarget%20school%2Frole:%20%0ADeadline:%20%0ALinks%20to%20draft:%20%0A%0AThanks!">
+            Email for consult
+          </a> -->
+          <!-- Formspree form here -->
+          <form action="https://formspree.io/f/mdaldlrw" method="POST" style="background:none; box-shadow:none; padding:0; gap:10px; margin:0 auto; max-width:none; width:100%;">
+            <label data-i18n="formNameLabel" style="color:var(--text); width:100%;">
+              Your Name:
+              <input type="text" name="name" required style="width:calc(100% - 20px);">
+            </label>
+            <label data-i18n="formEmailLabel" style="color:var(--text); width:100%;">
+              Your Email:
+              <input type="email" name="email" required style="width:calc(100% - 20px);">
+            </label>
+            <label data-i18n="formMessageLabel" style="color:var(--text); width:100%;">
+              Your Message:
+              <textarea name="message" required style="width:calc(100% - 20px);"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary" data-i18n="formSendButton">Send</button>
+          </form>
+          <a class="btn" href="#services" data-i18n="viewServicesCta">View services</a>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; color:var(--muted); font-size:13px;" data-i18n="contactFormTip">
+        Tip: replace <b>YOUR_EMAIL_HERE</b> with your email. Later we can add a real contact form (Firebase Functions) if you want.
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p data-i18n="footerCopyright">&copy; 2026 CaPa's Writing house. All rights reserved.</p>
-    <nav class="footer-nav">
-      <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
-      <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
-      <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
-    </nav>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div data-i18n="footerCopyright">&copy; <span id="year"></span> CaPa Writing House</div>
+      <div style="display:flex; gap:14px;">
+        <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
+        <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
+        <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
+      </div>
+    </div>
   </footer>
 
   <script defer type="text/javascript" src="/main.js"></script>
