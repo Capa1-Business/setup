@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="blogPostPageTitle">CaPa Blog Post</title>
+  <meta name="description" data-i18n="blogPostMetaDescription" content="CaPa Writing House Blog - Detailed post." />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292642514548982"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-3292642514548982">
+
+  <!-- Optional: Inter font (safe to remove if you prefer system font only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href='/style.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <a href="/" data-i18n="brandName">CaPa Writing House</a> / <a href="/blog/" data-i18n="blogLink">Blog</a>
+          </div>
+        </div>
+
+        <div class="nav-links" aria-label="Primary">
+          <a href="/index.html#services" data-i18n="navServices">Services</a>
+          <a href="/index.html#process" data-i18n="navProcess">Process</a>
+          <a href="/index.html#reviews" data-i18n="navReviews">Reviews</a>
+          <a href="/index.html#contact" data-i18n="navContact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <select id="language-switcher">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+          </select>
+          <span class="pill" id="themePill" data-i18n="themeLight">Light</span>
+          <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle theme" data-i18n="toggleThemeButton">
+            Toggle theme
+          </button>
+          <a class="btn btn-primary" href="/index.html#contact" data-i18n="freeConsultBtn">Free 10-min consult</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <article>
+      <div class="meta">
+        <span class="tag" id="cat" data-i18n="blogPostCategory"></span>
+        <span id="date"></span>
+      </div>
+      <h1 id="title" data-i18n="blogPostTitle"></h1>
+      <div class="content" id="content"></div>
+    </article>
+
+    <footer style="text-align: center; margin-top: 20px;">
+      <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div data-i18n="footerCopyright">&copy; <span id="year"></span> CaPa Writing House</div>
+        <div style="display:flex; gap:14px;">
+          <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
+          <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
+          <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/blog/posts.js"></script>
+  <script src="/main.js"></script>
+  <script>
+    // Blog post-specific logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(location.search);
+      const id = params.get("id");
+      const posts = window.CAPA_POSTS || [];
+      const post = posts.find(p => p.id === id);
+
+      if (post) {
+        // Use translation keys for post content
+        const currentLang = document.documentElement.lang || 'en';
+        const translatedTitle = translations[currentLang][`post_${post.id}_title`] || post.title;
+        const translatedContent = translations[currentLang][`post_${post.id}_content`] || post.content;
+        const translatedCategory = translations[currentLang][`post_${post.id}_category`] || post.category;
+
+        document.title = `${translatedTitle} | CaPa Blog`;
+        document.getElementById("title").textContent = translatedTitle;
+        document.getElementById("date").textContent = post.date;
+        document.getElementById("cat").textContent = translatedCategory;
+        document.getElementById("content").innerHTML = translatedContent;
+        // Also update meta description for the specific post
+        const metaDescriptionElement = document.querySelector('meta[name="description"]');
+        if (metaDescriptionElement) {
+          metaDescriptionElement.content = translations[currentLang][`post_${post.id}_summary`] || post.summary;
+        }
+      } else {
+        const currentLang = document.documentElement.lang || 'en';
+        document.title = translations[currentLang].blogPostNotFoundTitle || "Post not found | CaPa Blog";
+        document.getElementById("title").textContent = translations[currentLang].blogPostNotFound || "Post not found";
+        document.getElementById("content").innerHTML = `<p>${translations[currentLang].blogPostNotFoundMessage || "The requested post could not be found."}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

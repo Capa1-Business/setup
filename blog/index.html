@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="blogPageTitle">CaPa Blog</title>
+  <meta name="description" data-i18n="blogMetaDescription" content="CaPa Writing House Blog - SOP/Essay/Resume tips, examples, and updates." />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292642514548982"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-3292642514548982">
+
+  <!-- Optional: Inter font (safe to remove if you prefer system font only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href='/style.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <a href="/" data-i18n="brandName">CaPa Writing House</a> / <span data-i18n="blogLink">Blog</span>
+          </div>
+        </div>
+
+        <div class="nav-links" aria-label="Primary">
+          <a href="/index.html#services" data-i18n="navServices">Services</a>
+          <a href="/index.html#process" data-i18n="navProcess">Process</a>
+          <a href="/index.html#reviews" data-i18n="navReviews">Reviews</a>
+          <a href="/index.html#contact" data-i18n="navContact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <select id="language-switcher">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="zh">中文</option>
+          </select>
+          <span class="pill" id="themePill" data-i18n="themeLight">Light</span>
+          <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle theme" data-i18n="toggleThemeButton">
+            Toggle theme
+          </button>
+          <a class="btn btn-primary" href="/index.html#contact" data-i18n="freeConsultBtn">Free 10-min consult</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1 data-i18n="blogHeroTitle">Blog</h1>
+      <p data-i18n="blogHeroDescription">SOP/Essay/Resume tips, examples, and updates.</p>
+
+      <div class="filters">
+        <input id="q" placeholder="Search title/summary…" data-i18n-placeholder="blogSearchPlaceholder" />
+        <select id="cat">
+          <option value="" data-i18n="blogAllCategories">All categories</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="list" id="list"></div>
+
+    <footer style="text-align: center; margin-top: 20px;">
+      <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div data-i18n="footerCopyright">&copy; <span id="year"></span> CaPa Writing House</div>
+        <div style="display:flex; gap:14px;">
+          <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
+          <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
+          <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/blog/posts.js"></script>
+  <script src="/main.js"></script>
+  <script>
+    // Blog-specific rendering logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const posts = (window.CAPA_POSTS || []).slice().sort((a,b) => (a.date < b.date ? 1 : -1));
+      const listEl = document.getElementById("list");
+      const qEl = document.getElementById("q");
+      const catEl = document.getElementById("cat");
+
+      // build categories
+      const cats = Array.from(new Set(posts.map(p => p.category).filter(Boolean))).sort();
+      for (const c of cats){
+        const opt = document.createElement("option");
+        opt.value = c; opt.textContent = c;
+        catEl.appendChild(opt);
+      }
+
+      function render(){
+        const q = (qEl.value || "").toLowerCase().trim();
+        const cat = catEl.value;
+        const filtered = posts.filter(p => {
+          // Use translated title and summary for search
+          const currentLang = document.documentElement.lang || 'en';
+          const translatedTitle = translations[currentLang][`post_${p.id}_title`] || p.title;
+          const translatedSummary = translations[currentLang][`post_${p.id}_summary`] || p.summary;
+          const hitQ = !q || (translatedTitle + " " + translatedSummary).toLowerCase().includes(q);
+          const hitC = !cat || p.category === cat;
+          return hitQ && hitC;
+        });
+
+        listEl.innerHTML = "";
+        if (!filtered.length){
+          listEl.innerHTML = `<div class="card" data-i18n="noPostsFound">No posts found.</div>`;
+        } else {
+          for (const p of filtered){
+            const currentLang = document.documentElement.lang || 'en';
+            const translatedCategory = translations[currentLang][`post_${p.id}_category`] || p.category;
+            const translatedTitle = translations[currentLang][`post_${p.id}_title`] || p.title;
+            const translatedSummary = translations[currentLang][`post_${p.id}_summary`] || p.summary;
+
+            const card = document.createElement("a");
+            card.className = "card";
+            card.href = `/blog/post.html?id=${encodeURIComponent(p.id)}&lang=${currentLang}`; // Pass language
+            card.innerHTML = `
+              <div class="meta">
+                <span class="tag">${translatedCategory || "Post"}</span>
+                <span>${p.date}</span>
+              </div>
+              <div class="title">${translatedTitle}</div>
+              <div class="summary">${translatedSummary}</div>
+            `;
+            listEl.appendChild(card);
+          }
+        }
+      }
+
+      qEl.addEventListener("input", render);
+      catEl.addEventListener("change", render);
+
+      // Initial render after translations are applied
+      window.addEventListener('languageChanged', render); // Custom event from main.js
+      render();
+    });
+  </script>
+</body>
+</html>
