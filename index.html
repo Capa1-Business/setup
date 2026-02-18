@@ -3,31 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>CaPa's Writing house</title>
   <link href='/style.css' rel='stylesheet'>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292642514548982"
      crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-3292642514548982">
 </head>
 <body>
-  <button id="theme-toggle">Toggle Theme</button>
-  <h1>Hello, world!</h1>
+  <header>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle">Toggle Theme</button>
+    </nav>
+  </header>
 
-  <form action="https://formspree.io/f/mdaldlrw" method="POST">
-    <label>
-      Your Name:
-      <input type="text" name="name" required>
-    </label>
-    <label>
-      Your Email:
-      <input type="email" name="email" required>
-    </label>
-    <label>
-      Your Message:
-      <textarea name="message" required></textarea>
-    </label>
-    <button type="submit">Send</button>
-  </form>
+  <main>
+    <section id="hero">
+      <h1>Welcome to CaPa's Writing house</h1>
+      <p>Your expert partner for crafting compelling Statements of Purpose, college/transfer/master/PhD essays, and professional Resumes.</p>
+      <p>Let us help you articulate your unique story and achieve your academic and career goals.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="service-item">
+        <h3>SoP & Essays</h3>
+        <p>Tailored writing for university admissions, including Statements of Purpose, Personal Statements, and various application essays. We highlight your achievements and aspirations effectively.</p>
+      </div>
+      <div class="service-item">
+        <h3>Resume Building</h3>
+        <p>Professionally designed resumes and CVs that stand out to recruiters. We focus on showcasing your skills, experience, and potential.</p>
+      </div>
+    </section>
+
+    <section id="why-choose-us">
+      <h2>Why Choose CaPa's Writing house?</h2>
+      <ul>
+        <li>Experienced writers specializing in academic and professional documents.</li>
+        <li>Personalized approach to capture your unique voice and story.</li>
+        <li>Proven track record of helping clients achieve their goals.</li>
+        <li>Timely delivery and competitive pricing.</li>
+      </ul>
+    </section>
+
+    <section id="how-it-works">
+      <h2>How It Works</h2>
+      <ol>
+        <li>Submit your requirements and relevant documents.</li>
+        <li>Collaborate with your dedicated writer.</li>
+        <li>Receive a professionally crafted draft for review.</li>
+        <li>Finalize your document with revisions.</li>
+      </ol>
+    </section>
+
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <form action="https://formspree.io/f/mdaldlrw" method="POST">
+        <label>
+          Your Name:
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Your Email:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Your Message:
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CaPa's Writing house. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/about.html">About Us</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </nav>
+  </footer>
 
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
