@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - CaPa's Writing house</title>
+  <title data-i18n="aboutUsTitle">About Us - CaPa's Writing house</title>
   <link href='/style.css' rel='stylesheet'>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292642514548982"
      crossorigin="anonymous"></script>
@@ -12,28 +12,33 @@
 <body>
   <header>
     <nav>
-      <a href="/index.html#hero">Home</a>
-      <a href="/index.html#services">Services</a>
-      <a href="/index.html#contact">Contact</a>
-      <button id="theme-toggle">Toggle Theme</button>
+      <a href="/index.html#hero" data-i18n="navHome">Home</a>
+      <a href="/index.html#services" data-i18n="navServices">Services</a>
+      <a href="/index.html#contact" data-i18n="navContact">Contact</a>
+      <select id="language-switcher">
+        <option value="en">English</option>
+        <option value="ko">한국어</option>
+        <option value="zh">中文</option>
+      </select>
+      <button id="theme-toggle" data-i18n="toggleTheme">Toggle Theme</button>
     </nav>
   </header>
 
   <main>
     <section>
-      <h1>About Us</h1>
-      <p>Welcome to CaPa's Writing house, your dedicated partner in crafting impactful personal and professional documents. We specialize in helping students and professionals articulate their unique stories and aspirations through expertly written Statements of Purpose, college and university essays, and professional resumes.</p>
-      <p>Our mission is to empower you to achieve your academic and career goals by providing high-quality, personalized writing services. Our team of experienced writers understands the nuances of various application processes and recruitment standards, ensuring your documents stand out.</p>
-      <p>Whether you're aiming for admission to a prestigious university or looking to land your dream job, CaPa's Writing house is here to guide you with clear, concise, and compelling narratives.</p>
+      <h1 data-i18n="aboutUsHeading">About Us</h1>
+      <p data-i18n="aboutP1">Welcome to CaPa's Writing house, your dedicated partner in crafting impactful personal and professional documents. We specialize in helping students and professionals articulate their unique stories and aspirations through expertly written Statements of Purpose, college and university essays, and professional resumes.</p>
+      <p data-i18n="aboutP2">Our mission is to empower you to achieve your academic and career goals by providing high-quality, personalized writing services. Our team of experienced writers understands the nuances of various application processes and recruitment standards, ensuring your documents stand out.</p>
+      <p data-i18n="aboutP3">Whether you're aiming for admission to a prestigious university or looking to land your dream job, CaPa's Writing house is here to guide you with clear, concise, and compelling narratives.</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 CaPa's Writing house. All rights reserved.</p>
+    <p data-i18n="footerCopyright">&copy; 2026 CaPa's Writing house. All rights reserved.</p>
     <nav class="footer-nav">
-      <a href="/about.html">About Us</a>
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
+      <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
+      <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
+      <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
     </nav>
   </footer>
 

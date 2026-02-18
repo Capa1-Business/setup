@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CaPa's Writing house</title>
+  <title data-i18n="pageTitle">CaPa's Writing house</title>
   <link href='/style.css' rel='stylesheet'>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3292642514548982"
      crossorigin="anonymous"></script>
@@ -12,78 +12,83 @@
 <body>
   <header>
     <nav>
-      <a href="#hero">Home</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <button id="theme-toggle">Toggle Theme</button>
+      <a href="#hero" data-i18n="navHome">Home</a>
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+      <select id="language-switcher">
+        <option value="en">English</option>
+        <option value="ko">한국어</option>
+        <option value="zh">中文</option>
+      </select>
+      <button id="theme-toggle" data-i18n="toggleTheme">Toggle Theme</button>
     </nav>
   </header>
 
   <main>
     <section id="hero">
-      <h1>Welcome to CaPa's Writing house</h1>
-      <p>Your expert partner for crafting compelling Statements of Purpose, college/transfer/master/PhD essays, and professional Resumes.</p>
-      <p>Let us help you articulate your unique story and achieve your academic and career goals.</p>
+      <h1 data-i18n="heroTitle">Welcome to CaPa's Writing house</h1>
+      <p data-i18n="heroP1">Your expert partner for crafting compelling Statements of Purpose, college/transfer/master/PhD essays, and professional Resumes.</p>
+      <p data-i18n="heroP2">Let us help you articulate your unique story and achieve your academic and career goals.</p>
     </section>
 
     <section id="services">
-      <h2>Our Services</h2>
+      <h2 data-i18n="servicesTitle">Our Services</h2>
       <div class="service-item">
-        <h3>SoP & Essays</h3>
-        <p>Tailored writing for university admissions, including Statements of Purpose, Personal Statements, and various application essays. We highlight your achievements and aspirations effectively.</p>
+        <h3 data-i18n="serviceSoPTitle">SoP & Essays</h3>
+        <p data-i18n="serviceSoPDesc">Tailored writing for university admissions, including Statements of Purpose, Personal Statements, and various application essays. We highlight your achievements and aspirations effectively.</p>
       </div>
       <div class="service-item">
-        <h3>Resume Building</h3>
-        <p>Professionally designed resumes and CVs that stand out to recruiters. We focus on showcasing your skills, experience, and potential.</p>
+        <h3 data-i18n="serviceResumeTitle">Resume Building</h3>
+        <p data-i18n="serviceResumeDesc">Professionally designed resumes and CVs that stand out to recruiters. We focus on showcasing your skills, experience, and potential.</p>
       </div>
     </section>
 
     <section id="why-choose-us">
-      <h2>Why Choose CaPa's Writing house?</h2>
+      <h2 data-i18n="whyChooseTitle">Why Choose CaPa's Writing house?</h2>
       <ul>
-        <li>Experienced writers specializing in academic and professional documents.</li>
-        <li>Personalized approach to capture your unique voice and story.</li>
-        <li>Proven track record of helping clients achieve their goals.</li>
-        <li>Timely delivery and competitive pricing.</li>
+        <li data-i18n="whyChoose1">Experienced writers specializing in academic and professional documents.</li>
+        <li data-i18n="whyChoose2">Personalized approach to capture your unique voice and story.</li>
+        <li data-i18n="whyChoose3">Proven track record of helping clients achieve their goals.</li>
+        <li data-i18n="whyChoose4">Timely delivery and competitive pricing.</li>
       </ul>
     </section>
 
     <section id="how-it-works">
-      <h2>How It Works</h2>
+      <h2 data-i18n="howItWorksTitle">How It Works</h2>
       <ol>
-        <li>Submit your requirements and relevant documents.</li>
-        <li>Collaborate with your dedicated writer.</li>
-        <li>Receive a professionally crafted draft for review.</li>
-        <li>Finalize your document with revisions.</li>
+        <li data-i18n="howItWorks1">Submit your requirements and relevant documents.</li>
+        <li data-i18n="howItWorks2">Collaborate with your dedicated writer.</li>
+        <li data-i18n="howItWorks3">Receive a professionally crafted draft for review.</li>
+        <li data-i18n="howItWorks4">Finalize your document with revisions.</li>
       </ol>
     </section>
 
     <section id="contact">
-      <h2>Get in Touch</h2>
+      <h2 data-i18n="contactTitle">Get in Touch</h2>
       <form action="https://formspree.io/f/mdaldlrw" method="POST">
-        <label>
+        <label data-i18n="formNameLabel">
           Your Name:
           <input type="text" name="name" required>
         </label>
-        <label>
+        <label data-i18n="formEmailLabel">
           Your Email:
           <input type="email" name="email" required>
         </label>
-        <label>
+        <label data-i18n="formMessageLabel">
           Your Message:
           <textarea name="message" required></textarea>
         </label>
-        <button type="submit">Send</button>
+        <button type="submit" data-i18n="formSendButton">Send</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 CaPa's Writing house. All rights reserved.</p>
+    <p data-i18n="footerCopyright">&copy; 2026 CaPa's Writing house. All rights reserved.</p>
     <nav class="footer-nav">
-      <a href="/about.html">About Us</a>
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
+      <a href="/about.html?lang=en" data-i18n="footerAbout">About Us</a>
+      <a href="/privacy.html?lang=en" data-i18n="footerPrivacy">Privacy Policy</a>
+      <a href="/terms.html?lang=en" data-i18n="footerTerms">Terms of Service</a>
     </nav>
   </footer>
 
